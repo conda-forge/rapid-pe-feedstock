@@ -21,11 +21,13 @@ requirements:
     - setuptools
   run:
     - h5py
+    - healpy
     - lalsuite
     - lscsoft-glue
     - matplotlib-base
     - numpy
     - python
+    - python-ligo-lw
     - scikit-learn
     - scipy
     - six
