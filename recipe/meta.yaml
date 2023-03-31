@@ -20,9 +20,11 @@ requirements:
     - python
     - setuptools
   run:
+    - bilby
     - h5py
     - healpy
     - lalsuite
+    - ligo.skymap
     - lscsoft-glue
     - matplotlib-base
     - numpy
