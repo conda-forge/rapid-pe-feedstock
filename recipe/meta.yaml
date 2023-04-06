@@ -11,7 +11,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -41,7 +41,9 @@ test:
     - pip check
   requires:
     - pip
-    # forcibly install uptodate xarray so that pip check doesn't choke on arviz
+    # Fixing dependencies specific to the conda-forge CI pipeline
+    - blosc2
+    - cython
     - xarray >=0.21.0
 
 about:
