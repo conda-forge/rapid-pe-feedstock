@@ -41,6 +41,8 @@ test:
     - pip check
   requires:
     - pip
+    # forcibly install uptodate xarray so that pip check doesn't choke on arviz
+    - xarray >=0.21.0
 
 about:
   home: https://git.ligo.org/rapidpe-rift/rapidpe/
