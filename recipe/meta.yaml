@@ -41,10 +41,6 @@ test:
     - pip check
   requires:
     - pip
-    # Fixing dependencies specific to the conda-forge CI pipeline
-    - c-blosc2
-    - cython
-    - xarray >=0.21.0
 
 about:
   home: https://git.ligo.org/rapidpe-rift/rapidpe/
