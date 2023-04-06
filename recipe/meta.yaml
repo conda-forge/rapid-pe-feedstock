@@ -42,7 +42,7 @@ test:
   requires:
     - pip
     # Fixing dependencies specific to the conda-forge CI pipeline
-    - blosc2
+    - c-blosc2
     - cython
     - xarray >=0.21.0
 
