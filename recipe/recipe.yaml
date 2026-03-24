@@ -1,0 +1,56 @@
+schema_version: 1
+
+context:
+  name: rapid-pe
+  version: 0.1.1
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/rapid_pe-${{ version }}.tar.gz
+  sha256: 733b283e7159801dd43c4ae7260f8f69b513940e9137516a2d282526f1de01d0
+
+build:
+  number: 1
+  script: ${{ PYTHON }} -m pip install . -vv
+  skip: win
+
+requirements:
+  host:
+    - pip
+    - python
+    - setuptools
+  run:
+    - bilby
+    - h5py
+    - healpy
+    - lalsuite
+    - ligo.skymap
+    - lscsoft-glue
+    - matplotlib-base
+    - numpy
+    - python
+    - python-ligo-lw
+    - scikit-learn
+    - scipy
+    - six
+
+tests:
+  - python:
+      imports:
+        - rapid_pe
+      pip_check: true
+
+about:
+  summary: "RapidPE: The original low-latency gravitational wave parameter estimation code."
+  homepage: https://git.ligo.org/rapidpe-rift/rapidpe/
+  license: GPL-2.0-or-later
+  license_file: COPYING
+
+extra:
+  recipe-maintainers:
+    - dwysocki
+    - vinaya-valsan
+    - CaitlinRose
