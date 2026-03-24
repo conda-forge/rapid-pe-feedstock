@@ -38,10 +38,23 @@ requirements:
     - six
 
 tests:
-  - python:
-      imports:
-        - rapid_pe
-      pip_check: true
+  - requirements:
+      run:
+        - pip
+        - pytest
+    script:
+      # Check metadata
+      - python -m pip check
+      - python -m pip show rapid-pe
+      # Run test suite
+      - python -m pytest -v --pyargs rapid_pe
+      # Check scripts
+      - rapidpe_calculate_overlap --help
+      - rapidpe_compute_intrinsic_fisher --help
+      - rapidpe_compute_intrinsic_grid --help
+      - rapidpe_create_event_dag --help
+      - rapidpe_integrate_extrinsic_likelihood --help
+      - rapidpe_triangulation --help
 
 about:
   summary: "RapidPE: The original low-latency gravitational wave parameter estimation code."
